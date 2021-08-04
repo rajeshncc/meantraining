@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Weather API </title>
+    <link rel="stylesheet" href="Library/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div style="width: 50%"  class="container"  >
+        <br>
+
+        <div class="well well-lg" style="background-color: orange" >
+            <img src="Images/partly_cloudy.png" >
+                <h2 style="  text-align: center"> Weater Condition</h2>
+        </div>
+        <br>
+        <div class="form-group">
+                <label for="location" > Location : </label>
+                <input class="form-control" type="text" placeholder="Enter Location"  id="location">
+        </div>
+        <div class="form-group">
+                <button class="btn btn-primary btn-block"  onclick="getWeather()" >Submit</button>
+        </div>
+
+        <div  class="form-group">
+            <div class = "text-success">
+                <label id='loc' > </label>
+                <br>
+                <label id='cord'></label> <label id = "lat"> </label>
+                <br>
+                <label id = "temp">  </label>
+                <br>
+                <label id = "pre">  </label>
+                <br>
+                <label id = "hum">   </label>
+                <br>
+                <label id = "wind">   </label>
+                <br>
+            </div>
+        </div>
+    </div>
+        <script>
+        
+            weatherdata = [];
+            city = null;
+            /** Getting the Weather information by using the API **/
+            function getWeather(){
+
+                    apikey = "14bae904fa7e0ce0a63e6ea5e0c96e64";
+                    city = document.getElementById('location').value;
+                
+                document.getElementById('loc').innerHTML = null;
+                document.getElementById('cord').innerHTML =  null;
+                document.getElementById('lat').innerHTML =  null;
+                document.getElementById('temp').innerHTML =  null;
+                document.getElementById('pre').innerHTML =  null;
+                document.getElementById('hum').innerHTML =  null;
+                document.getElementById('wind').innerHTML =  null;
+
+                if(!city){
+                    document.getElementById('loc').innerHTML = "Please Enter the Location";
+                    document.getElementById('loc').className = "text-danger"
+
+                   
+                    return; 
+                }
+
+                fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=14bae904fa7e0ce0a63e6ea5e0c96e64&units=metric')
+                .then(response=>response.json())
+                .then(json=>displayData(json))
+            }
+
+            /** Manipulating result into control  **/
+            function displayData(jsondata){
+                weatherdata = jsondata;
+
+                if(weatherdata.cod == "404")
+                {
+                    document.getElementById('loc').innerHTML = weatherdata.message;
+                    document.getElementById('loc').className = "text-danger"
+                    return; 
+                }
+                //console.log('displaydata :', weatherdata);
+                document.getElementById('loc').className = "text-success";
+                
+                document.getElementById('location').value= null;
+                document.getElementById('loc').innerHTML =  'Location :' + city;
+                document.getElementById('cord').innerHTML =  'Cord [ Lat : ' + weatherdata.coord.lat;
+                document.getElementById('lat').innerHTML =  'Lon : ' + weatherdata.coord.lon + ' ]';
+                document.getElementById('temp').innerHTML =  'Temp : ' + weatherdata.main.temp;
+                document.getElementById('pre').innerHTML =  'Pressure : ' + weatherdata.main.pressure;
+                document.getElementById('hum').innerHTML =  'Humidity : ' + weatherdata.main.humidity;
+                document.getElementById('wind').innerHTML =  'Wind : ' + weatherdata.wind.speed;
+                
+            }
+
+        </script>
+              
+</body>
+</html>

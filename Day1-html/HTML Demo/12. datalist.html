@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Form Elements </title>
+</head>
+
+<body>
+
+<form action="success.html">  
+    <h1> This the page for Form Elements </h1>
+
+
+    <label for="hotelmenu" > Select your single menu</label><br>
+        <select id= "hotelmenu">
+            <option value="tea" > tea</option>
+            <option value="coffee" > coffee</option>
+            <option value="milk" > milk</option>
+        </select>
+    <br>
+    <br>
+    <label for="hotelmenu2" > Select your Multiple menu</label><br>
+        <select id= "hotelmenu2" multiple >
+            <option value="tea" > tea</option>
+            <option value="coffee" > coffee</option>
+            <option value="milk" > milk</option>
+        </select>
+<br>
+<br>
+
+    <label> Please select your Menu</label>
+    <input list = "menu" name="menu">
+    <datalist id="menu">
+            <option value="tea" > tea</option>
+            <option value="coffee" > coffee</option>
+            <option value="milk" > milk</option>
+    </datalist>
+    <br>
+    <br>
+        <fieldset>
+            <legend> Enter your personal Data </legend>
+            <label for="fname"> First Name </label>
+            <input id="fname" type="text" placeholder="Enter your first name"><br>
+            <label for="age"> Age </label>
+            <input id="age" type="text" placeholder="Enter your Age"><br>
+            <input type="submit" value="Regiser">
+        </fieldset>
+    </body>
+
+
+</form>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Form Attributes </title>
+</head>
+
+<body>
+
+    <form action="success.html"> 
+            <label>Read only data</label>
+            <input type="text" value="Read only data" readonly><br>
+            <label>Default value</label>
+            <input type="text" placeholder="Last Name" value="Rajesh Kumar"><br>
+            <label>Disable text box</label>
+            <input type="text" value="Text box disabled" disabled><br>
+
+            <label>Enter Your Name</label>
+            <input type="text" placeholder="Enter your name" maxlength="10" > <label>length should not exceed more than 50</label><br>
+            <label>Enter Country Name</label>
+            <input type="text"  
+            pattern="[A-Za-z]{3}" title="Three letter country code">
+    </form>
+</body>
+</html>

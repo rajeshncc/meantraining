@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Form Attributes </title>
+</head>
+
+<body  style="background: darkseagreen " >
+
+    <form action="success.html"> 
+
+        <h1 style="text-align: center"> Corona Patient Management</h1>
+        <div style="align-content: center" >
+        <table >
+            <tr>
+                <td>
+                        <label>Name of the patient</label>
+                </td>
+                <td>
+                    <input type="text" id="name"  maxlength="50"  placeholder="Enter the Patient Name" autofocus>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>Gender</label>
+                </td>
+                <td>
+                        Male : <input type="radio" name ="sex" value="m">
+                        Female: <input type="radio" name ="sex" value="f">
+                        Other : <input type="radio" name ="sex" value="o">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>Location</label>
+                </td>
+                <td>
+                        <select id="location">
+                                <option value="bng">Bengaluru</option>
+                                <option value="chn" selected>Chennai</option>
+                                <option value="hyd">Hyderabad</option>
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>Pincode</label>
+                </td>
+                <td>
+                        <input maxlength="7" type="text" placeholder="000 000"  id= "pincode">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>Aadhar No</label>
+                </td>
+                <td>
+                        <input maxlength="10" type="text"  id= "aano">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>Mobile</label>
+                </td>
+                <td>
+                        <input maxlength="10" type="text" pattern="[0-9]" id= "mobileno">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>Attendee Name</label>
+                </td>
+                <td>
+                        <input type="text" pattern="[0-9]" id= "attname">
+                </td>
+                </tr>
+            <tr>
+                <td>
+                        <label>Date and Time of Request</label>
+                </td>
+                <td>
+                        <input type="date" id="dtrequest">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <label>SP02 Level</label>
+                </td>
+                <td>
+                    <input  type="range" min="0" max = "100" id = "sprange">
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                        <label for="htype" >Type of Hospital </label>
+                </td>
+                <td>
+                    <select id="htype">
+                            <option value="g" > Govt.</option>
+                            <option value="p" > Private</option>
+                            <option value="cc" > Care Center</option>
+                    </select>
+                </td>
+            </tr>  
+            <tr>
+                <td>
+                        <input id="save" type="submit">
+                </td>
+                <td>
+                        <input id="reset" type="reset">
+                </td>
+            </tr>   
+      
+    </table>
+<br>
+<br>
+    <table>
+        <tr>
+            <th> Sl No          
+            </th>
+            <th>  BU No         
+            </th>
+            <th>  Patient Name         
+            </th>
+            <th> Date and time of Request          
+            </th>
+            <th>   Type of Hospital        
+            </th>
+          
+        </tr>
+        <tr>
+            <td>1 </td>
+            <td><a href="" > click to view</a></td>
+            <td>Ravi</td>
+            <td>5/10/2021  10:55:00 AM</td>
+            <td>Govt.</td>
+        </tr>
+        <tr>
+            <td>2 </td>
+            <td><a href="" > click to view </a></td>
+            <td>Nandini</td>
+            <td>5/10/2021  10:55:00 AM</td>
+            <td>Private</td>
+        </tr>
+    </table>
+<br>
+<br>
+
+<h2 style="text-align: center" >Bed Allocation Status</h2>
+<table>
+    <tr>
+        <td>BU No</td>   
+        <td> </td>  
+    </tr>
+    <tr>
+        <td>Date and time of Registration</td>   
+        <td> </td>  
+    </tr>
+    <tr>
+        <td>Allotment status</td>   
+        <td> </td>  
+    </tr>
+    <tr>
+        <td>Hospital Name</td>   
+        <td> </td>  
+    </tr>
+    <tr>
+        <td>Location</td>   
+        <td> </td>  
+    </tr>
+    <tr>
+        <td>Contact Number</td>   
+        <td> </td>  
+    </tr>
+</table>
+
+</div>
+    </form>
+    </body>
+</html>

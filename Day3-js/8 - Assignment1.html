@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<body>
+  <table>
+    <tr>
+        <td><label>Input1</label></td>
+        <td><input id = "a" type="text"></label></td>
+    </tr>
+    <tr>
+        <td><label>Input2</label></td>
+        <td><input id = "b" type="text"></label></td>
+    </tr>
+    <tr>
+        <td><label>Operator</label></td>
+        <td><input id = "o" type="text"></label></td>
+    </tr>
+    <tr>
+        <td><label>Result  </label></td>
+        <td><label id="c"> </label>></td>
+    </tr>
+  </table>
+  <br>
+  <label id="res"></label>
+   
+    <button onclick="calc()" >Result</button>
+    <script>
+        
+        function calc(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var o = document.getElementById('o').value;
+            var c;
+            if(o == "+")
+            {
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                                        
+                c = parseInt(a)+parseInt(b);
+            } 
+            else if(o == "-")
+            {
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                        
+                c = parseInt(a)-parseInt(b);
+            }
+            else if( o=="*")
+            {
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                        
+                c = parseInt(a)*parseInt(b);
+            }
+            else if(o=="/")
+            {
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                        
+                c = parseInt(a)/parseInt(b);
+            }
+            else 
+            {
+                alert("The operator is not valid");
+            }
+            document.getElementById('c').value = "of " + o + "is " + c;
+        }
+
+        
+
+    </script>
+</body>
+</html>

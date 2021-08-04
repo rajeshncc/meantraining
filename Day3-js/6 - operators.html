@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Operators</title>
+</head>
+<body>
+    <h1> Operators </h1>
+    
+    <label id="x"></label>
+    <label id="y"></label>
+    <label id="z"></label>
+<br>
+<br>
+
+    <label id="r">Result</label>
+
+    <br>
+    <br>
+    <button onclick="addition()" > Addition X + Y </button>
+
+    <script>
+        x = 100;
+        y = 200;
+        z = 300;
+
+        document.getElementById('x').innerHTML = x;
+        document.getElementById('y').innerHTML = y;
+        document.getElementById('z').innerHTML = z;
+
+        function addition()
+        {
+            document.getElementById('r').innerHTML = x+y;
+        }
+    </script>
+</body>
+</html>

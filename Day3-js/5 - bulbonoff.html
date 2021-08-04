@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programe for Bulb on and off</title>
+</head>
+<body>
+    <img id="bulb" src="images/pic_bulboff.gif">
+    <button id="on" onclick="bulbon()" >On</button>
+    <button disabled id="off" onclick="bulboff()" >Off</button>
+
+    <script>
+    
+    function bulbon()
+    {
+        document.getElementById('bulb').src = "images\\pic_bulbon.gif"
+        document.getElementById('on').disabled = true;
+        document.getElementById('off').disabled = false;
+    }
+
+    function bulboff()
+    {
+        document.getElementById('bulb').src = "images\\pic_bulboff.gif"
+        document.getElementById('on').disabled = false;
+        document.getElementById('off').disabled = true;
+    }
+
+    </script>
+</body>
+</html>
